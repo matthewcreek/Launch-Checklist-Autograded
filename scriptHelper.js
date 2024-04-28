@@ -30,6 +30,15 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  }
  
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    if (validateInput(pilot) === 'Empty' || validateInput(pilot) !== 'Not a Number') {
+        alert('Pilot name cannot be blank or a number!')
+    } else if (validateInput(copilot) === 'Empty' || validateInput(copilot) !== 'Not a Number') {
+        alert('Copilot name cannot be blank or a number!')
+    } else if (validateInput(fuelLevel) === 'Empty' || validateInput(fuelLevel) !== 'Is a Number') {
+        alert('Fuel Level must be a valid number!')
+    } else if (validateInput(cargoLevel) === 'Empty' || validateInput(cargoLevel) !== 'Is a Number') {
+        alert('Cargo Mass must be a valid number!')
+    }
 
     console.log(document, list, pilot, copilot, fuelLevel, cargoLevel)
  }
